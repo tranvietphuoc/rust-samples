@@ -31,4 +31,6 @@ fn main() {
     // the other difference between mut and shadowing is that because we're effectively creating a
     // new variable when we use the let keyword again
     //
+    let mut spaces = " ";
+    spaces = spaces.len();
 }
