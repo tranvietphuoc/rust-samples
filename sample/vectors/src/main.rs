@@ -8,7 +8,7 @@ fn main() {
     println!("{:?}", v);
 
     let v1 = vec![1, 2, 3, 4];
-    let third = &v1[2];
+    let third = &v1[2];  // index must be usize
     println!("the third element is {}", third);
 
     match v1.get(2) {
