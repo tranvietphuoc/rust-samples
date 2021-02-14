@@ -42,7 +42,7 @@ fn main() {
     // a mode is the value occurs most often
     // here we use HashMap to implement mode of list
     let mut map = HashMap::new();
-    for element in tmp_v{
+    for element in tmp_v {
         let count = map.entry(element).or_insert(0);
         *count += 1;
     }

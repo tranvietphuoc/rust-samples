@@ -43,15 +43,16 @@ fn main() {
     }
 
     // Updating HashMap
-    // using insert method
-    // only inserting a value if the key has no value
+    // 1. Using insert method using insert() method
+    // 2. Only inserting a value if the key has no value using or_insert() method with entry() method
     scores1.entry(String::from("Yellow")).or_insert(60);
     scores1.entry(String::from("Blue")).or_insert(60);
     // or_insert method on Entry is defined to return a mutable reference
     // to the value for the corresponding Entry key if that key exists.
     // and if not, inserts the parameter as the new value for this key and returns a mutable
     // reference to the new value
-    // Update a value based on the old value
+    //
+    // 3. Update a value based on the old value
     let text = "hello world wonderful world";
     let mut map = HashMap::new();
     for word in text.split_whitespace() {
@@ -62,5 +63,7 @@ fn main() {
     // or_insert returns a mutable reference &mut V to the value for this key.
     //
     // Hashing Function, by default, HashMap uses a cryptographically strong,
-    // hashing function can provide resistance to Denial of Service (Dos) attack
+    // hashing function can provide resistance to Denial of Service (Dos) attack. It's not a
+    // fastest hashing algorithm, but better security.
+    // To switch to another hashing, we can try BuildHasher trait
 }
