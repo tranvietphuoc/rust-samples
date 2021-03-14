@@ -148,3 +148,17 @@ fn read_user_from_file() -> Result<String, io::Error> {
 //     Ok(())
 // }
 // The Box<dyn Error> type is called a trait object. Box<dyn Error> mean "any kind of error"
+//
+
+
+// when code panics, there no way to recover. you could call panic! for any error situation
+// whether there's possible way to recover or not, but then you're making the decision on behalf
+// of the code calling your code that situation is unrecoverable.
+// when you choose the return a Result value, you give the calling code options rather than making
+// decision for it. The calling code could choose to attemp to recover in a way that's appropriate
+// for its situation, or it could decide that an Err value in this case is unrecoverable, so it
+// can call panic! and turn your recoverable error into an unrecoverable one. => returning Result
+// is a good default choice when you're defining a function that might fail.
+//
+//
+
